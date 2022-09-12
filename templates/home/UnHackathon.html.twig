@@ -1,0 +1,40 @@
+{% include 'base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col-6">
+				<div class="card">
+					<img class="card-img-top" src="https://th.bing.com/th/id/OIP.AXF8IYKqC3Y7JxYRaUrCPQHaEK?pid=ImgDet&rs=1" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title" style="text-align:center;">{{Hackathon.theme}}</h5>
+						Ville
+						<h5 class="card-title" id="datelimite">{{ Hackathon.ville }}</h5>
+						Date de début
+						<h5 class="card-title" id="datelimite">{{Hackathon.datedebut|date('d/m/y')}}</h5>
+						Heure de début
+						<h5 class="card-title" id="datelimite">{{Hackathon.heuredebut|date('H:i')}}</h5>
+						Date de fin
+						<h5 class="card-title" id="datelimite">{{Hackathon.datefin|date('d/m/y')}}</h5>
+						Heure de fin
+						<h5 class="card-title" id="datelimite">{{Hackathon.heurefin|date('H:i')}}</h5>
+						Lieu
+						<h5 class="card-title" id="datelimite">{{Hackathon.lieu}}</h5>
+						Adresse
+						<h5 class="card-title" id="datelimite">{{Hackathon.rue}},
+							{{Hackathon.Cp}},
+							{{Hackathon.Ville}}</h5>
+						Dates limites
+						<h5 class="card-title" id="datelimite">{{Hackathon.datelimite|date('d/m/y')}}</h5>
+						Places restantes :<h5 class="card-title" id="nbplaces">{{Hackathon.nbplaces}}</h5>
+						<form id="form1" method="post">
+							<label for="description">Entrez une description</label>
+							<textarea class="form-control" id="description" name="description" rows="3"></textarea>
+						</br>
+						<button formaction="{{path('InscriptionHackathon', {'id':Hackathon.idHackathon})}}" type="submit" class="btn btn-primary" id="btn-inscription">S'inscrire</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>{% endblock %}{% include 'footer.html.twig' %}

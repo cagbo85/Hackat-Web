@@ -1,0 +1,4 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^(.*)$  http://192.168.4.1/~cagbo/HackatWeb/public/$1
+</IfModule>
